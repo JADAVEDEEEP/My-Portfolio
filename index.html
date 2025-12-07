@@ -1,15 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Jadav - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + React</title>
-</head>
+    <style>
+      :root {
+        --bg-dark: #0a0a0a;
+        --text-light: #e5e5e5;
+        --text-muted: #a3a3a3;
+        --accent-purple: #a855f7;
+        --accent-pink: #ec4899;
+        --accent-blue: #3b82f6;
+      }
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+      body {
+        font-family: "Outfit", sans-serif;
+        background-color: var(--bg-dark) !important;
+        color: var(--text-light) !important;
+        overflow-x: hidden;
+      }
 
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: var(--text-light) !important;
+      }
+
+      .text-muted {
+        color: var(--text-muted) !important;
+      }
+
+      /* Background Gradient Overlay */
+      .bg-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        background: radial-gradient(
+          circle at 50% 0%,
+          rgba(120, 119, 198, 0.15),
+          rgba(255, 255, 255, 0) 50%
+        );
+        pointer-events: none;
+      }
+
+      /* Navbar */
+      .navbar {
+        backdrop-filter: blur(16px);
+        background: rgba(10, 10, 10, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+      }
+
+      .nav-link {
+        color: var(--text-muted) !important;
+        font-weight: 500;
+        transition: all 0.3s;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--text-light) !important;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+          to right,
+          var(--accent-purple),
+          var(--accent-pink)
+        );
+        transition: width 0.3s;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero-title {
+        background: linear-gradient(to right, #f472b6, #c084fc, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 800;
+        letter-spacing: -1px;
+      }
+
+      .profile-img-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .profile-img-container::before {
+        content: "";
+        position: absolute;
+        inset: -4px;
+        background: linear-gradient(
+          to right,
+          var(--accent-pink),
+          var(--accent-purple),
+          var(--accent-blue)
+        );
+        border-radius: 50%;
+        z-index: -1;
+        filter: blur(10px);
+        opacity: 0.7;
+        animation: pulse-glow 3s infinite;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          opacity: 0.7;
+          transform: scale(1);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1.02);
+        }
+      }
+
+      /* Buttons */
+      .btn-gradient {
+        background: linear-gradient(
+          90deg,
+          var(--accent-purple),
+          var(--accent-pink)
+        );
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(236, 72, 153, 0.5);
+        color: white;
+      }
+
+      .btn-outline-custom {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text-light);
+        border-radius: 50px;
+        padding: 10px 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-custom:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: var(--text-light);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Tech Icons */
+      .tech-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-10px) scale(1.1);
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Experience Card */
+      .experience-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 1rem;
+        padding: 2rem;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(168, 85, 247, 0.3);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      }
+
+      .experience-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          var(--accent-purple),
+          var(--accent-pink)
+        );
+      }
+
+      .tech-badge {
+        background: rgba(168, 85, 247, 0.1);
+        border: 1px solid rgba(168, 85, 247, 0.2);
+        color: #d8b4fe;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        border-radius: 50px;
+        transition: all 0.2s;
+      }
+
+      .tech-badge:hover {
+        background: rgba(168, 85, 247, 0.2);
+        border-color: rgba(168, 85, 247, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .tech-card {
+          width: 80px;
+          height: 80px;
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top">
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="index.html"
+        >
+          <img
+            src="assets/kevinRushLogo.png"
+            alt="Logo"
+            class="rounded-circle border border-secondary"
+            style="width: 35px; height: 35px"
+          />
+          <span class="fw-bold text-light tracking-wide fs-5">Deep Jadav</span>
+        </a>
+
+        <button
+          class="navbar-toggler border-0 text-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <i class="fa-solid fa-bars fs-4"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-center"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-3 gap-md-5 my-3 my-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="d-none d-md-flex gap-4 fs-5">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            class="text-muted hover-text-blue transition"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="text-muted hover-text-white transition"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="text-muted hover-text-pink transition"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a
+            href="https://x.com"
+            target="_blank"
+            class="text-muted hover-text-gray transition"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      class="container min-vh-100 d-flex align-items-center pt-5 mt-4 mt-md-0"
+    >
+      <div
+        class="row w-100 align-items-center flex-column-reverse flex-lg-row g-5"
+      >
+        <!-- Text Content -->
+        <div
+          class="col-lg-6 text-center text-lg-start"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
+          <h1 class="display-3 hero-title mb-3">Deep Jadav</h1>
+          <h2 class="h3 fw-medium text-light mb-4">MERN Stack Developer</h2>
+          <p
+            class="lead text-muted fw-light mb-5 mx-auto mx-lg-0 lh-base"
+            style="max-width: 550px"
+          >
+            I am a passionate MERN stack developer with a strong interest in
+            building dynamic, responsive, and scalable web applications. As a
+            fresher, I have developed a solid foundation in front-end
+            technologies like React.js and back-end technologies including
+            Node.js and Express.js.
+          </p>
+          <div
+            class="d-flex justify-content-center justify-content-lg-start gap-3"
+          >
+            <a href="projects.html" class="btn btn-gradient">View Projects</a>
+            <a href="contact.html" class="btn btn-outline-custom">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Profile Image -->
+        <div
+          class="col-lg-6 d-flex justify-content-center justify-content-lg-end"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <div
+            class="profile-img-container"
+            style="width: 280px; max-width: 100%"
+          >
+            <img
+              src="assets/deeprush.jpeg"
+              alt="Deep Jadav"
+              class="img-fluid rounded-circle shadow-lg"
+              style="border: 4px solid rgba(23, 23, 23, 0.8)"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="container py-5">
+      <h2
+        class="text-center display-5 fw-bold text-light mb-5"
+        data-aos="fade-up"
+      >
+        Technologies
+      </h2>
+      <div class="d-flex flex-wrap justify-content-center gap-4 gap-md-5">
+        <!-- Node.js -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+          <i class="fa-brands fa-node text-success display-4"></i>
+        </div>
+        <!-- Express -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+          <span class="display-6 fw-bold text-muted">ex</span>
+        </div>
+        <!-- HTML5 -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+          <i
+            class="fa-brands fa-html5 text-danger display-4"
+            style="color: #f97316 !important"
+          ></i>
+        </div>
+        <!-- Bootstrap -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+          <i
+            class="fa-brands fa-bootstrap text-primary display-4"
+            style="color: #a855f7 !important"
+          ></i>
+        </div>
+        <!-- JavaScript -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
+          <i class="fa-brands fa-js text-warning display-4"></i>
+        </div>
+        <!-- React -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="600">
+          <i class="fa-brands fa-react text-info display-4"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="container py-5 mb-5">
+      <h2
+        class="text-center display-5 fw-bold text-light mb-5"
+        data-aos="fade-up"
+      >
+        Experience
+      </h2>
+      <div class="d-flex flex-column align-items-center gap-4">
+        <!-- Experience 1 -->
+        <div
+          class="experience-card w-100"
+          style="max-width: 900px"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="row align-items-center">
+            <div class="col-lg-3 mb-3 mb-lg-0">
+              <p class="text-muted small mb-0 fw-semibold">01/2024 - 04/2024</p>
+            </div>
+            <div class="col-lg-9">
+              <h5 class="fw-bold text-light mb-2">
+                Full Stack Intern
+                <span style="color: var(--accent-purple)"
+                  >| Six Sigma Technosoft</span
+                >
+              </h5>
+              <p class="text-muted mb-4 lh-sm">
+                I developed robust .NET Core Web APIs integrated with SQL Server
+                databases using SSMS across multiple projects, implementing
+                RESTful endpoints for CRUD operations, authentication, and
+                authorization with JWT tokens.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-badge">.NET Core</span>
+                <span class="tech-badge">React.js</span>
+                <span class="tech-badge">SSMS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div
+          class="experience-card w-100"
+          style="max-width: 900px"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="row align-items-center">
+            <div class="col-lg-3 mb-3 mb-lg-0">
+              <p class="text-muted small mb-0 fw-semibold">09/2024 - 04/2025</p>
+            </div>
+            <div class="col-lg-9">
+              <h5 class="fw-bold text-light mb-2">
+                MERN Stack Developer Intern
+                <span style="color: var(--accent-purple)"
+                  >| Uptake Infotech</span
+                >
+              </h5>
+              <p class="text-muted mb-4 lh-sm">
+                As a MERN Stack Developer Intern, I contributed to developing
+                dynamic and responsive web applications using HTML, CSS,
+                Bootstrap, and JavaScript. I also worked with Laravel backend
+                and PHPMyAdmin for database handling.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Bootstrap</span>
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">PHPMyAdmin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted py-4 mt-auto">
+      <p class="small mb-0">© 2025 Deep Jadav. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+        offset: 100,
+        duration: 800,
+        easing: "ease-out-cubic",
+      });
+    </script>
+
+    <style>
+      .hover-text-blue:hover {
+        color: #3b82f6 !important;
+      }
+
+      .hover-text-white:hover {
+        color: #ffffff !important;
+      }
+
+      .hover-text-pink:hover {
+        color: #ec4899 !important;
+      }
+
+      .hover-text-gray:hover {
+        color: #d1d5db !important;
+      }
+    </style>
+  </body>
 </html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Deep Jadav</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --text-light: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-blue: #3b82f6;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark) !important;
+            color: var(--text-light) !important;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--text-light) !important;
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.15), rgba(255, 255, 255, 0) 50%);
+            pointer-events: none;
+        }
+
+        /* Navbar */
+        .navbar {
+            backdrop-filter: blur(16px);
+            background: rgba(10, 10, 10, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text-light) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(168, 85, 247, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-img-wrapper {
+            overflow: hidden;
+            border-radius: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #000;
+        }
+
+        .project-img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .tech-badge {
+            background: rgba(168, 85, 247, 0.1);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            color: #d8b4fe;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+        }
+
+        /* Modal Customization */
+        .modal-content {
+            background-color: #121212;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            border-radius: 1rem;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="assets/kevinRushLogo.png" alt="Logo" class="rounded-circle border border-secondary"
+                    style="width: 35px; height: 35px;">
+                <span class="fw-bold text-light tracking-wide fs-5">Deep Jadav</span>
+            </a>
+
+            <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars fs-4"></i>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-3 gap-md-5 my-3 my-md-0">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="d-none d-md-flex gap-4 fs-5">
+                <a href="https://linkedin.com" target="_blank" class="text-muted hover-text-blue transition"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com" target="_blank" class="text-muted hover-text-white transition"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com" target="_blank" class="text-muted hover-text-pink transition"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com" target="_blank" class="text-muted hover-text-gray transition"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="container pt-5 mt-5 pb-5">
+        <h1 class="text-center display-4 fw-bold mb-5 pt-4 text-light" data-aos="fade-down">My <span
+                style="color: var(--accent-purple);">Projects</span></h1>
+
+        <div class="d-flex flex-column align-items-center gap-5">
+
+            <!-- Project 1 -->
+            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
+                data-bs-target="#projectModal1" data-aos="fade-up">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/project-1.png" alt="E-Commerce Website Task"
+                                class="img-fluid project-img">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">E-Commerce Website Task</h3>
+                        <p class="text-muted small mb-4 lh-base"
+                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            Designed responsive UI using HTML, CSS, and Bootstrap. Integrated JavaScript for product
+                            filtering, single-product views, and cart checkout using Fake Store API.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Fake Store API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
+                data-bs-target="#projectModal2" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/project-2.png" alt="Portfolio Website"
+                                class="img-fluid project-img">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">Portfolio Website</h3>
+                        <p class="text-muted small mb-4 lh-base"
+                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            Built with HTML, CSS, and Bootstrap featuring smooth animations and mobile responsiveness.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="tech-badge">HTML</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">AOS Animation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
+                data-bs-target="#projectModal3" data-aos="fade-up" data-aos-delay="200">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <div class="project-img-wrapper">
+                            <img src="assets/projects/project-5.png" alt="Product Management CRUD System"
+                                class="img-fluid project-img">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">Product Management CRUD System</h3>
+                        <p class="text-muted small mb-4 lh-base"
+                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            Built a complete CRUD system for product management using React, Node.js, Express.js, and
+                            JWT authentication. Implemented API integration, secure data handling, and interactive UI
+                            functionality.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express.js</span>
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">JWT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modals -->
+
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" style="color: #c084fc;">E-Commerce Website Task</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4 lh-base">Designed responsive UI using HTML, CSS, and Bootstrap. Integrated
+                        JavaScript for product filtering, single-product views, and cart checkout using Fake Store API.
+                    </p>
+
+                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">Bootstrap</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Fake Store API</span>
+                    </div>
+
+                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
+                    <ul class="text-muted small lh-base">
+                        <li>Finding the right public API was difficult because many APIs lacked required fields like
+                            price, reviews, or product images. After researching multiple sources, I selected Fake Store
+                            API as it provided complete and consistent data.</li>
+                        <li>Implementing filtering based on category, price, and rating required creating multiple
+                            conditions and ensuring proper DOM updates.</li>
+                        <li>Building a single-product page dynamically was new, and I learned to use URL search
+                            parameters to fetch detailed product data.</li>
+                        <li>Product images were not storing correctly inside localStorage, and after debugging, I fixed
+                            this by refetching product data on cart load.</li>
+                        <li>Managing add-to-cart, delete-item, updating total price, and tax calculation needed
+                            structured logic and reusable functions.</li>
+                        <li>Ensuring the cart resets after placing an order required clearing localStorage and updating
+                            the UI state correctly.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" style="color: #c084fc;">Portfolio Website</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4 lh-base">Built with HTML, CSS, and Bootstrap featuring smooth animations
+                        and mobile responsiveness.</p>
+
+                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">Bootstrap</span>
+                        <span class="tech-badge">AOS Animation</span>
+                    </div>
+
+                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
+                    <ul class="text-muted small lh-base">
+                        <li>Converting the React component structure into clean, semantic HTML pages while maintaining
+                            code maintainability.</li>
+                        <li>Replacing Tailwind CSS with Bootstrap 5 and custom CSS to achieve a premium, responsive
+                            design.</li>
+                        <li>Implementing AOS (Animate On Scroll) library to replicate the smooth animations originally
+                            created with Framer Motion.</li>
+                        <li>Ensuring all assets and image paths were correctly referenced after moving from a build-step
+                            environment to a static structure.</li>
+                        <li>Optimizing the site for mobile devices using Bootstrap's grid system and media queries.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" style="color: #c084fc;">Product Management CRUD System</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-4 lh-base">Built a complete CRUD system for product management using React,
+                        Node.js, Express.js, and JWT authentication. Implemented API integration, secure data handling,
+                        and interactive UI functionality.</p>
+
+                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Express.js</span>
+                        <span class="tech-badge">React.js</span>
+                        <span class="tech-badge">JWT</span>
+                    </div>
+
+                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
+                    <ul class="text-muted small lh-base">
+                        <li>The first challenge was that I was still learning. I had completed my basics of Node.js and
+                            Express, using the built-in methods to create a server and handle requests and responses.
+                            Since I was already familiar with the MVC structure, it was easier to understand how routes
+                            handle the request and then the controller executes the business logic. That’s how it works,
+                            and I was still learning while building this project.</li>
+                        <li>I was also somewhat familiar with JWT tokens. I read about them and implemented them to
+                            check whether a token was being generated for the correct user or not. At first, it was not
+                            generating because of a hashed password issue — I was not converting the plain text password
+                            using bcrypt again to compare it with the stored hashed password. Once I fixed that, the
+                            password matched and I was able to generate the JWT token for login.</li>
+                        <li>I faced a multer issue in the product section. The images were uploading locally, but after
+                            deployment on Render, it wasn’t working. Later, I realized it was an environment variable
+                            problem — I had forgotten to add the security key in the Render deployment environment.</li>
+                        <li>Only logged-in users can access their own products, and they are allowed to delete, update,
+                            and edit only their own products.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-muted py-4 mt-auto">
+        <p class="small mb-0">© 2025 Deep Jadav. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+    </script>
+
+    <style>
+        .hover-text-blue:hover {
+            color: #3b82f6 !important;
+        }
+
+        .hover-text-white:hover {
+            color: #ffffff !important;
+        }
+
+        .hover-text-pink:hover {
+            color: #ec4899 !important;
+        }
+
+        .hover-text-gray:hover {
+            color: #d1d5db !important;
+        }
+    </style>
+</body>
+
+</html>
