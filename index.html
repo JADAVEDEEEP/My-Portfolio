@@ -18,7 +18,7 @@
     />
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <!-- AOS Animation CSS -->
@@ -32,6 +32,8 @@
         --accent-purple: #a855f7;
         --accent-pink: #ec4899;
         --accent-blue: #3b82f6;
+        --accent-green: #4fab41;
+        --mono: "JetBrains Mono", monospace;
       }
 
       body {
@@ -68,6 +70,54 @@
           rgba(255, 255, 255, 0) 50%
         );
         pointer-events: none;
+      }
+
+      /* Ambient floating blobs */
+      .blob {
+        position: fixed;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        filter: blur(100px);
+        opacity: 0.18;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .blob-1 {
+        background: var(--accent-purple);
+        top: -160px;
+        left: -160px;
+        animation: blob-float-1 22s ease-in-out infinite;
+      }
+
+      .blob-2 {
+        background: var(--accent-blue);
+        bottom: -200px;
+        right: -160px;
+        width: 420px;
+        height: 420px;
+        animation: blob-float-2 26s ease-in-out infinite;
+      }
+
+      @keyframes blob-float-1 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(70px, 50px);
+        }
+      }
+
+      @keyframes blob-float-2 {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(-60px, -60px);
+        }
       }
 
       /* Navbar */
@@ -110,17 +160,190 @@
       }
 
       /* Hero Section */
+      .hero-section {
+        position: relative;
+      }
+
+      .hero-eyebrow {
+        font-family: var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 0.8rem;
+        color: var(--accent-pink);
+        margin-bottom: 0.75rem;
+      }
+
       .hero-title {
-        background: linear-gradient(to right, #f472b6, #c084fc, #3b82f6);
+        background: linear-gradient(
+          100deg,
+          #f472b6,
+          #c084fc,
+          #3b82f6,
+          #c084fc,
+          #f472b6
+        );
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 800;
         letter-spacing: -1px;
+        animation: gradient-shift 7s ease-in-out infinite;
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      .role-line {
+        min-height: 2.2rem;
+      }
+
+      #roleText::after {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 1.1em;
+        margin-left: 4px;
+        background: var(--accent-pink);
+        vertical-align: -0.15em;
+        animation: blink-cursor 0.9s steps(1) infinite;
+      }
+
+      @keyframes blink-cursor {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero-fade-up {
+        opacity: 0;
+        transform: translateY(16px);
+        animation: hero-fade-up 0.8s ease forwards;
+      }
+
+      .hero-fade-up.delay-1 {
+        animation-delay: 0.15s;
+      }
+
+      .hero-fade-up.delay-2 {
+        animation-delay: 0.3s;
+      }
+
+      .hero-fade-up.delay-3 {
+        animation-delay: 0.45s;
+      }
+
+      @keyframes hero-fade-up {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .scroll-cue {
+        position: absolute;
+        left: 50%;
+        bottom: 18px;
+        transform: translateX(-50%);
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        animation: scroll-bounce 2s ease-in-out infinite;
+        opacity: 0.6;
+      }
+
+      @keyframes scroll-bounce {
+        0%,
+        100% {
+          transform: translate(-50%, 0);
+        }
+        50% {
+          transform: translate(-50%, 8px);
+        }
+      }
+
+      /* Profile + orbit */
+      .profile-orbit-wrap {
+        position: relative;
+        width: 420px;
+        height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .orbit-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border: 1px dashed rgba(255, 255, 255, 0.08);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .orbit-ring.ring-1 {
+        width: 330px;
+        height: 330px;
+        animation: spin-cw 18s linear infinite;
+      }
+
+      .orbit-ring.ring-2 {
+        width: 400px;
+        height: 400px;
+        animation: spin-ccw 26s linear infinite;
+      }
+
+      @keyframes spin-cw {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+
+      @keyframes spin-ccw {
+        from {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        to {
+          transform: translate(-50%, -50%) rotate(-360deg);
+        }
+      }
+
+      .orbit-badge {
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #121212;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+        font-size: 1.1rem;
+      }
+
+      .ring-1 .orbit-badge {
+        animation: spin-ccw 18s linear infinite;
+      }
+
+      .ring-2 .orbit-badge {
+        animation: spin-cw 26s linear infinite;
       }
 
       .profile-img-container {
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        width: 240px;
       }
 
       .profile-img-container::before {
@@ -151,6 +374,70 @@
           opacity: 1;
           transform: scale(1.02);
         }
+      }
+
+      .status-card {
+        position: absolute;
+        bottom: -6px;
+        right: -18px;
+        z-index: 3;
+        width: 230px;
+        background: #121212;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.85rem;
+        padding: 0.85rem 1rem;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        animation: status-float 4s ease-in-out infinite;
+      }
+
+      @keyframes status-float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      .status-card-header {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+        text-transform: lowercase;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #4ade80;
+        box-shadow: 0 0 8px #4ade80;
+        animation: pulse-dot 1.6s ease-in-out infinite;
+      }
+
+      @keyframes pulse-dot {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      .status-card-body {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        line-height: 1.5;
+        color: #d8b4fe;
+        white-space: pre-wrap;
+        margin: 0;
+        min-height: 5.6em;
       }
 
       /* Buttons */
@@ -211,6 +498,81 @@
         background: rgba(255, 255, 255, 0.08);
         border-color: rgba(255, 255, 255, 0.2);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+
+      .tech-card svg {
+        width: 34px;
+        height: 34px;
+      }
+
+      /* Experience Timeline */
+      .timeline {
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 6px;
+        bottom: 6px;
+        left: 23px;
+        width: 2px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline-item {
+        display: flex;
+        gap: 1.25rem;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: relative;
+        flex: 0 0 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .timeline-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #3a3a3a;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        position: relative;
+        z-index: 1;
+        transition: all 0.5s ease;
+      }
+
+      .timeline-item.revealed .timeline-dot {
+        background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+        border-color: transparent;
+        box-shadow: 0 0 14px rgba(168, 85, 247, 0.6);
+      }
+
+      .timeline-item .experience-card {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .timeline-item.revealed .experience-card {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-date {
+        font-family: var(--mono);
+        color: var(--accent-purple);
       }
 
       /* Experience Card */
@@ -278,12 +640,48 @@
           height: 80px;
           padding: 1.5rem;
         }
+
+        .orbit-ring {
+          display: none;
+        }
+
+        .profile-orbit-wrap {
+          width: auto;
+          height: auto;
+        }
+
+        .status-card {
+          position: static;
+          margin: 1.25rem auto 0;
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-title,
+        .orbit-ring,
+        .ring-1 .orbit-badge,
+        .ring-2 .orbit-badge,
+        .status-card,
+        .status-dot,
+        .scroll-cue,
+        .blob,
+        .profile-img-container::before {
+          animation: none !important;
+        }
+
+        #roleText::after {
+          animation: none !important;
+        }
       }
     </style>
   </head>
 
   <body>
     <div class="bg-overlay"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md fixed-top">
@@ -358,21 +756,20 @@
 
     <!-- Hero Section -->
     <section
-      class="container min-vh-100 d-flex align-items-center pt-5 mt-4 mt-md-0"
+      class="hero-section container min-vh-100 d-flex align-items-center pt-5 mt-4 mt-md-0"
     >
       <div
         class="row w-100 align-items-center flex-column-reverse flex-lg-row g-5"
       >
         <!-- Text Content -->
-        <div
-          class="col-lg-6 text-center text-lg-start"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-        >
-          <h1 class="display-3 hero-title mb-3">Deep Jadav</h1>
-          <h2 class="h3 fw-medium text-light mb-4">MERN Stack Developer</h2>
+        <div class="col-lg-6 text-center text-lg-start">
+          <p class="hero-eyebrow hero-fade-up">// Hello, I'm</p>
+          <h1 class="display-3 hero-title mb-3 hero-fade-up delay-1">Deep Jadav</h1>
+          <h2 class="h3 fw-medium text-light mb-4 role-line hero-fade-up delay-2">
+            <span id="roleText"></span>
+          </h2>
           <p
-            class="lead text-muted fw-light mb-5 mx-auto mx-lg-0 lh-base"
+            class="lead text-muted fw-light mb-5 mx-auto mx-lg-0 lh-base hero-fade-up delay-2"
             style="max-width: 550px"
           >
             I am a passionate MERN stack developer with a strong interest in
@@ -382,7 +779,7 @@
             Node.js and Express.js.
           </p>
           <div
-            class="d-flex justify-content-center justify-content-lg-start gap-3"
+            class="d-flex justify-content-center justify-content-lg-start gap-3 hero-fade-up delay-3"
           >
             <a href="projects.html" class="btn btn-gradient">View Projects</a>
             <a href="contact.html" class="btn btn-outline-custom">Contact Me</a>
@@ -395,18 +792,36 @@
           data-aos="fade-left"
           data-aos-duration="1000"
         >
-          <div
-            class="profile-img-container"
-            style="width: 280px; max-width: 100%"
-          >
-            <img
-              src="assets/deeprush.jpeg"
-              alt="Deep Jadav"
-              class="img-fluid rounded-circle shadow-lg"
-              style="border: 4px solid rgba(23, 23, 23, 0.8)"
-            />
+          <div class="profile-orbit-wrap">
+            <div class="orbit-ring ring-1" aria-hidden="true">
+              <div class="orbit-badge"><i class="fa-brands fa-react" style="color:var(--accent-blue);"></i></div>
+            </div>
+            <div class="orbit-ring ring-2" aria-hidden="true">
+              <div class="orbit-badge"><i class="fa-brands fa-node" style="color:#3fca6c;"></i></div>
+            </div>
+
+            <div class="profile-img-container">
+              <img
+                src="assets/deeprush.jpeg"
+                alt="Deep Jadav"
+                class="img-fluid rounded-circle shadow-lg"
+                style="border: 4px solid rgba(23, 23, 23, 0.8)"
+              />
+            </div>
+
+            <div class="status-card" aria-hidden="true">
+              <div class="status-card-header">
+                <span class="status-dot"></span>
+                <span>whoami.js</span>
+              </div>
+              <pre class="status-card-body"><code id="typedCode"></code></pre>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div class="scroll-cue" aria-hidden="true">
+        <i class="fa-solid fa-chevron-down"></i>
       </div>
     </section>
 
@@ -419,6 +834,10 @@
         Technologies
       </h2>
       <div class="d-flex flex-wrap justify-content-center gap-4 gap-md-5">
+        <!-- React -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="50">
+          <i class="fa-brands fa-react display-4" style="color: var(--accent-blue);"></i>
+        </div>
         <!-- Node.js -->
         <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
           <i class="fa-brands fa-node text-success display-4"></i>
@@ -426,6 +845,13 @@
         <!-- Express -->
         <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
           <span class="display-6 fw-bold text-muted">ex</span>
+        </div>
+        <!-- MongoDB -->
+        <div class="tech-card" data-aos="zoom-in" data-aos-delay="250" title="MongoDB">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-label="MongoDB">
+            <path d="M12 2C12 2 6.2 6.1 6.2 13.1C6.2 17.3 8.8 20.3 12 22C15.2 20.3 17.8 17.3 17.8 13.1C17.8 6.1 12 2 12 2Z" fill="var(--accent-green)"/>
+            <path d="M12 6.5V22" stroke="#0a0a0a" stroke-width="0.6" stroke-opacity="0.45"/>
+          </svg>
         </div>
         <!-- HTML5 -->
         <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
@@ -445,8 +871,6 @@
         <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
           <i class="fa-brands fa-js text-warning display-4"></i>
         </div>
-        <!-- React -->
-        
       </div>
     </section>
 
@@ -458,20 +882,16 @@
       >
         Experience
       </h2>
-      <div class="d-flex flex-column align-items-center gap-4">
-        <!-- Experience 1 -->
-        <div
-          class="experience-card w-100"
-          style="max-width: 900px"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          <div class="row align-items-center">
-            <div class="col-lg-3 mb-3 mb-lg-0">
-              <p class="text-muted small mb-0 fw-semibold">01/2024 - 04/2024</p>
+      <div class="mx-auto" style="max-width: 900px">
+        <div class="timeline">
+          <!-- Experience 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
             </div>
-            <div class="col-lg-9">
-              <h5 class="fw-bold text-light mb-2">
+            <div class="experience-card w-100">
+              <p class="timeline-date small mb-0 fw-semibold">01/2024 - 04/2024</p>
+              <h5 class="fw-bold text-light mb-2 mt-2">
                 Full Stack Intern
                 <span style="color: var(--accent-purple)"
                   >| Six Sigma Technosoft</span
@@ -490,21 +910,15 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Experience 2 -->
-        <div
-          class="experience-card w-100"
-          style="max-width: 900px"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
-          <div class="row align-items-center">
-            <div class="col-lg-3 mb-3 mb-lg-0">
-              <p class="text-muted small mb-0 fw-semibold">09/2024 - 04/2025</p>
+          <!-- Experience 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
             </div>
-            <div class="col-lg-9">
-              <h5 class="fw-bold text-light mb-2">
+            <div class="experience-card w-100">
+              <p class="timeline-date small mb-0 fw-semibold">09/2024 - 04/2025</p>
+              <h5 class="fw-bold text-light mb-2 mt-2">
                 MERN Stack Developer Intern
                 <span style="color: var(--accent-purple)"
                   >| Uptake Infotech</span
@@ -550,6 +964,105 @@
         duration: 800,
         easing: "ease-out-cubic",
       });
+
+      var reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+
+      /* Role typewriter */
+      (function () {
+        var roles = [
+          "MERN Stack Developer",
+          "React.js Enthusiast",
+          "API Craftsman",
+          "Problem Solver",
+        ];
+        var el = document.getElementById("roleText");
+        if (!el) return;
+
+        if (reduceMotion) {
+          el.textContent = roles[0];
+          return;
+        }
+
+        var roleIndex = 0;
+        var charIndex = 0;
+        var deleting = false;
+
+        function tick() {
+          var current = roles[roleIndex];
+          if (!deleting) {
+            charIndex++;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex === current.length) {
+              deleting = true;
+              setTimeout(tick, 1700);
+              return;
+            }
+          } else {
+            charIndex--;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex === 0) {
+              deleting = false;
+              roleIndex = (roleIndex + 1) % roles.length;
+            }
+          }
+          setTimeout(tick, deleting ? 30 : 65);
+        }
+        tick();
+      })();
+
+      /* Status card typing */
+      (function () {
+        var el = document.getElementById("typedCode");
+        if (!el) return;
+
+        var code =
+          'const dev = {\n  name: "Deep Jadav",\n  role: "MERN Developer",\n  status: "available"\n};';
+
+        if (reduceMotion) {
+          el.textContent = code;
+          return;
+        }
+
+        var i = 0;
+        function tick() {
+          if (i <= code.length) {
+            el.textContent = code.slice(0, i);
+            i++;
+            setTimeout(tick, 16);
+          }
+        }
+        setTimeout(tick, 700);
+      })();
+
+      /* Timeline reveal on scroll */
+      (function () {
+        var items = document.querySelectorAll(".timeline-item");
+        if (!items.length) return;
+
+        if (reduceMotion || !("IntersectionObserver" in window)) {
+          items.forEach(function (item) {
+            item.classList.add("revealed");
+          });
+          return;
+        }
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("revealed");
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+
+        items.forEach(function (item) {
+          observer.observe(item);
+        });
+      })();
     </script>
 
     <style>
