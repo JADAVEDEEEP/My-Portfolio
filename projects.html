@@ -1,666 +1,566 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects — Deep Jadav</title>
+    <meta
+      name="description"
+      content="Projects by Deep Jadav: LeadScope AI lead intelligence, an AI research & recommendation agent, a RAG PDF chatbot, AI deck analysis, and MERN apps with JWT authentication."
+    />
+    <meta name="theme-color" content="#0B1535" />
+    <meta property="og:title" content="Projects — Deep Jadav" />
+    <meta property="og:description" content="AI agents, RAG, lead intelligence and full-stack MERN projects." />
+    <meta property="og:image" content="assets/projects/ai-research-recommendation-agent.webp" />
+    <link rel="icon" href="assets/kevinRushLogo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Deep Jadav</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="curtain" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --text-light: #e5e5e5;
-            --text-muted: #a3a3a3;
-            --accent-purple: #a855f7;
-            --accent-pink: #ec4899;
-            --accent-blue: #3b82f6;
-        }
+    <header class="site-header">
+      <nav class="nav-bar" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Deep Jadav — home">
+          <span class="brand-mark" aria-hidden="true">DJ</span>
+          <span><span class="brand-name">Deep Jadav</span><span class="brand-role">Software Developer</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="nav-social">
+            <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <a class="btn btn-primary btn-sm nav-cta" href="contact.html" data-magnetic>Let's connect <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </header>
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-dark) !important;
-            color: var(--text-light) !important;
-            overflow-x: hidden;
-        }
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="menu-toggle mobile-close" type="button" data-menu-toggle aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <ul>
+        <li style="--i: 0"><a href="index.html">Home <span>01</span></a></li>
+        <li style="--i: 1"><a href="about.html">About <span>02</span></a></li>
+        <li style="--i: 2"><a href="projects.html">Projects <span>03</span></a></li>
+        <li style="--i: 3"><a href="contact.html">Contact <span>04</span></a></li>
+      </ul>
+      <div class="mobile-social">
+        <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="icon-link" href="mailto:jadavdeep560@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--text-light) !important;
-        }
-
-        .text-muted {
-            color: var(--text-muted) !important;
-        }
-
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.15), rgba(255, 255, 255, 0) 50%);
-            pointer-events: none;
-        }
-
-        /* Navbar */
-        .navbar {
-            backdrop-filter: blur(16px);
-            background: rgba(10, 10, 10, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .nav-link {
-            color: var(--text-muted) !important;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text-light) !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Project Card */
-        .project-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 1rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(168, 85, 247, 0.3);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .project-img-wrapper {
-            overflow: hidden;
-            border-radius: 0.75rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            background: #000;
-        }
-
-        .project-img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-
-        .tech-badge {
-            background: rgba(168, 85, 247, 0.1);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            color: #d8b4fe;
-            font-size: 0.75rem;
-            padding: 0.25rem 0.6rem;
-            border-radius: 50px;
-        }
-
-        /* Modal Customization */
-        .modal-content {
-            background-color: #121212;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-light);
-            border-radius: 1rem;
-        }
-
-        .modal-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .modal-footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .btn-close {
-            filter: invert(1) grayscale(100%) brightness(200%);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.3);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="bg-overlay"></div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md fixed-top">
+    <main id="main">
+      <section class="page-hero" aria-labelledby="page-title">
+        <div class="grid-lines" aria-hidden="true"></div>
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="assets/kevinRushLogo.png" alt="Logo" class="rounded-circle border border-secondary"
-                    style="width: 35px; height: 35px;">
-                <span class="fw-bold text-light tracking-wide fs-5">Deep Jadav</span>
-            </a>
-
-            <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars fs-4"></i>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav gap-3 gap-md-5 my-3 my-md-0">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="d-none d-md-flex gap-4 fs-5">
-                <a href="https://linkedin.com" target="_blank" class="text-muted hover-text-blue transition"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank" class="text-muted hover-text-white transition"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://instagram.com" target="_blank" class="text-muted hover-text-pink transition"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com" target="_blank" class="text-muted hover-text-gray transition"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-            </div>
+          <p class="eyebrow" data-reveal>Selected work · 8 projects</p>
+          <h1 id="page-title" class="h-display page-title" data-split>My <span class="serif grad-text">projects</span></h1>
+          <p class="lead" data-reveal style="--d: 300ms">
+            From AI research agents and lead intelligence to JWT-secured MERN apps. Open any project to see the problems I ran into
+            and how I solved them.
+          </p>
         </div>
-    </nav>
+      </section>
 
-    <!-- Projects Section -->
-    <section class="container pt-5 mt-5 pb-5">
-        <h1 class="text-center display-4 fw-bold mb-5 pt-4 text-light" data-aos="fade-down">My <span
-                style="color: var(--accent-purple);">Projects</span></h1>
+      <section class="section" style="padding-top: 0" aria-label="Project list">
+        <div class="container">
+          <div class="filters" role="group" aria-label="Filter projects" data-reveal>
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All <span>08</span></button>
+            <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI-powered <span>04</span></button>
+            <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full stack <span>05</span></button>
+            <button class="filter-btn" type="button" data-filter="frontend" aria-pressed="false">Frontend <span>02</span></button>
+          </div>
+          <p id="filter-status" class="sr-only" aria-live="polite"></p>
 
-        <div class="d-flex flex-column align-items-center gap-5">
-
-            <!-- Project 1 -->
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal1" data-aos="fade-up">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-1.png" alt="E-Commerce Website Task"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">E-Commerce Website Task</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Designed responsive UI using HTML, CSS, and Bootstrap. Integrated JavaScript for product
-                            filtering, single-product views, and cart checkout using Fake Store API.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge">CSS</span>
-                            <span class="tech-badge">Bootstrap</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">Fake Store API</span>
-                        </div>
-                    </div>
+          <div class="project-grid">
+            <!-- 01 LeadScope -->
+            <article class="project-card is-featured" id="leadscope" data-category="ai fullstack" data-tilt="4" data-reveal>
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge is-new">New</span><span class="badge is-ai">AI · Full stack</span></div>
+                  <img src="assets/projects/leadscope-ai-lead-intelligence.webp" alt="LeadScope Quick Research screen with agency type, services and requirements form" loading="lazy" />
                 </div>
-            </div>
-
-            <!-- Project 2 --> 
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal2" data-aos="fade-up" data-aos-delay="100">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-2.png" alt="Portfolio Website"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">Portfolio Website</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Built with HTML, CSS, and Bootstrap featuring smooth animations and mobile responsiveness.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge">CSS</span>
-                            <span class="tech-badge">Bootstrap</span>
-                            <span class="tech-badge">AOS Animation</span>
-                        </div>
-                    </div>
+                <div class="project-body">
+                  <span class="project-num">01 / LEAD INTELLIGENCE</span>
+                  <h2 class="project-title">LeadScope — AI Lead Intelligence</h2>
+                  <p class="project-desc">
+                    AI lead research for digital marketing agencies: enter your agency type, services and requirements, and a
+                    Gemini-powered backend identifies the strongest client opportunity with a full action plan.
+                  </p>
+                  <ul class="feature-list">
+                    <li>Ranks candidates on a 100-point scoring rubric with HOT / WARM priority bands</li>
+                    <li>Generates six business outputs, from lead strategy to a personalized cold email</li>
+                    <li>Saves the candidate pool to Google Sheets</li>
+                  </ul>
+                  <div class="project-tags">
+                    <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Gemini API</span><span class="tag">Google Sheets API</span>
+                  </div>
+                  <div class="project-actions">
+                    <a class="btn btn-primary btn-sm" href="https://ai-frotnend-digital-marketing.vercel.app" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a class="btn btn-glass btn-sm" href="https://github.com/JADAVEDEEEP/AI_FROTNEND_DIGITAL_MARKETING" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Frontend</a>
+                    <a class="btn btn-glass btn-sm" href="https://github.com/JADAVEDEEEP/AI_BACKEND_DIGITAL_MARKETING" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Backend</a>
+                    <button class="btn btn-ghost btn-sm" type="button" data-open="dlg-leadscope">Details <i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </article>
 
-            <!-- Project 3 -->
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal3" data-aos="fade-up" data-aos-delay="200">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-5.png" alt="Product Management CRUD System"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">Product Management CRUD System</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Built a complete CRUD system for product management using React, Node.js, Express.js, and
-                            JWT authentication. Implemented API integration, secure data handling, and interactive UI
-                            functionality.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Express.js</span>
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">JWT</span>
-                        </div>
-                    </div>
+            <!-- 02 Research Agent -->
+            <article class="project-card is-featured is-reverse" id="research-agent" data-category="ai" data-tilt="4" data-reveal>
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge is-new">New</span><span class="badge is-ai">AI agent</span></div>
+                  <img src="assets/projects/ai-research-recommendation-agent.webp" alt="AI-Powered Research & Recommendation Agent home screen with company search and report sections" loading="lazy" />
                 </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal4" data-aos="fade-up" data-aos-delay="300">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-7.png" alt="Task Management System"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">Task Management System</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Built a full-stack task management application where users can securely manage their
-                            daily tasks using JWT authentication, with full CRUD functionality via a responsive
-                            React interface.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Express.js</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">JWT</span>
-                            <span class="tech-badge">bcrypt</span>
-                            <span class="tech-badge">Axios</span>
-                        </div>
-                    </div>
+                <div class="project-body">
+                  <span class="project-num">02 / RESEARCH AGENT</span>
+                  <h2 class="project-title">AI-Powered Research &amp; Recommendation Agent</h2>
+                  <p class="project-desc">
+                    Enter any company name and receive a comprehensive AI-generated business analysis, strategic opportunities and
+                    an executive-ready pitch letter.
+                  </p>
+                  <ul class="feature-list">
+                    <li>Report sections: overview, business profile, challenges, AI opportunities, CEO pitch and sources</li>
+                    <li>Gemini reasoning with Google Search grounding for every report</li>
+                    <li>Research archive and report export</li>
+                  </ul>
+                  <div class="project-tags"><span class="tag">Gemini API</span><span class="tag">Google Search grounding</span><span class="tag">AI agent</span></div>
+                  <div class="project-actions">
+                    <a class="btn btn-primary btn-sm" href="https://ai-powered-research-dashboard-clien.vercel.app" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <button class="btn btn-ghost btn-sm" type="button" data-open="dlg-research">Details <i class="fa-solid fa-arrow-right"></i></button>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </article>
 
-            <!-- Project 5 -->
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal5" data-aos="fade-up" data-aos-delay="400">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-8.png" alt="One Piece Card Game Deck Analysis (AI)"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">One Piece Card Game Deck Analysis (AI)</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Developed an AI-powered deck analysis platform for the One Piece Card Game, letting users
-                            build custom decks and receive strategic recommendations based on tournament meta and
-                            deck composition.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Express.js</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">OpenAI API</span>
-                            <span class="tech-badge">REST API</span>
-                        </div>
-                    </div>
+            <!-- 03 RAG -->
+            <article class="project-card" id="rag-pdf-chatbot" data-category="ai fullstack" data-tilt="6" data-reveal>
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge is-ai">AI · RAG</span></div>
+                  <img src="assets/projects/project-6.png" alt="RAG PDF Chatbot interface" loading="lazy" />
                 </div>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card p-4 w-100" style="max-width: 1000px;" data-bs-toggle="modal"
-                data-bs-target="#projectModal6" data-aos="fade-up" data-aos-delay="500">
-                <div class="row g-4 align-items-center">
-                    <div class="col-md-6">
-                        <div class="project-img-wrapper">
-                            <img src="assets/projects/project-6.png" alt="RAG PDF Chatbot (AI)"
-                                class="img-fluid project-img">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="h2 fw-bold mb-2" style="color: #c084fc;">RAG PDF Chatbot (AI)</h3>
-                        <p class="text-muted small mb-4 lh-base"
-                            style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                            Built a Retrieval-Augmented Generation app that lets users upload PDF documents and chat
-                            with their content, using Google's Gemini AI to answer questions grounded only in the
-                            uploaded document.
-                        </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">Express.js</span>
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">Gemini API</span>
-                            <span class="tech-badge">Multer</span>
-                            <span class="tech-badge">pdf-parse</span>
-                        </div>
-                    </div>
+                <div class="project-body">
+                  <span class="project-num">03 / RAG</span>
+                  <h2 class="project-title">RAG PDF Chatbot</h2>
+                  <p class="project-desc">
+                    A Retrieval-Augmented Generation app: upload PDF documents and chat with their content, using Google's Gemini AI
+                    to answer questions grounded only in the uploaded document.
+                  </p>
+                  <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Gemini API</span><span class="tag">Multer</span><span class="tag">pdf-parse</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-rag">Details <i class="fa-solid fa-arrow-right"></i></button></div>
                 </div>
-            </div>
+              </div>
+            </article>
 
+            <!-- 04 One Piece -->
+            <article class="project-card" id="one-piece-deck-analysis" data-category="ai fullstack" data-tilt="6" data-reveal style="--d: 80ms">
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge is-ai">AI · Full stack</span></div>
+                  <img src="assets/projects/project-8.png" alt="One Piece Card Game deck analysis app" loading="lazy" />
+                </div>
+                <div class="project-body">
+                  <span class="project-num">04 / AI ANALYSIS</span>
+                  <h2 class="project-title">One Piece Card Game — AI-Assisted Deck Analysis</h2>
+                  <p class="project-desc">
+                    An AI-powered deck analysis platform for the One Piece Card Game: build custom decks and receive strategic
+                    recommendations based on tournament meta and deck composition.
+                  </p>
+                  <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">OpenAI API</span><span class="tag">REST API</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-onepiece">Details <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 05 Product Management -->
+            <article class="project-card" id="product-management" data-category="fullstack" data-tilt="6" data-reveal>
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge">Full stack</span></div>
+                  <img src="assets/projects/project-5.png" alt="Product Management CRUD System" loading="lazy" />
+                </div>
+                <div class="project-body">
+                  <span class="project-num">05 / CRUD · AUTH</span>
+                  <h2 class="project-title">Product Management System</h2>
+                  <p class="project-desc">
+                    A complete CRUD system for product management with JWT authentication — API integration, secure data handling and
+                    an interactive UI where users manage only their own products.
+                  </p>
+                  <div class="project-tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">React.js</span><span class="tag">JWT</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-product">Details <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 06 Task Management -->
+            <article class="project-card" id="task-management" data-category="fullstack" data-tilt="6" data-reveal style="--d: 80ms">
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge">Full stack</span></div>
+                  <img src="assets/projects/project-7.png" alt="Task Management System" loading="lazy" />
+                </div>
+                <div class="project-body">
+                  <span class="project-num">06 / PRODUCTIVITY</span>
+                  <h2 class="project-title">Task Management Application</h2>
+                  <p class="project-desc">
+                    A full-stack task manager where users securely manage their daily tasks with JWT authentication and full CRUD via
+                    a responsive React interface.
+                  </p>
+                  <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">JWT</span><span class="tag">bcrypt</span><span class="tag">Axios</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-task">Details <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 07 E-Commerce -->
+            <article class="project-card" id="ecommerce" data-category="frontend" data-tilt="6" data-reveal>
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge">Frontend</span></div>
+                  <img src="assets/projects/project-1.png" alt="E-Commerce Website" loading="lazy" />
+                </div>
+                <div class="project-body">
+                  <span class="project-num">07 / E-COMMERCE</span>
+                  <h2 class="project-title">E-Commerce Website</h2>
+                  <p class="project-desc">
+                    Responsive storefront with product filtering, single-product views and cart checkout using the Fake Store API.
+                  </p>
+                  <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span><span class="tag">Fake Store API</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-ecommerce">Details <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 08 Portfolio -->
+            <article class="project-card" id="portfolio" data-category="frontend" data-tilt="6" data-reveal style="--d: 80ms">
+              <div class="project-inner">
+                <span class="project-glare" aria-hidden="true"></span>
+                <div class="project-media">
+                  <div class="project-badges"><span class="badge">Frontend · 3D</span></div>
+                  <img src="assets/projects/project-2.png" alt="Portfolio Website" loading="lazy" />
+                </div>
+                <div class="project-body">
+                  <span class="project-num">08 / THIS SITE</span>
+                  <h2 class="project-title">Portfolio Website</h2>
+                  <p class="project-desc">
+                    This site — now an interactive 3D experience with a Three.js hero, a custom CSS design system and vanilla
+                    JavaScript animations. First built with HTML, CSS, Bootstrap and AOS.
+                  </p>
+                  <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Three.js</span></div>
+                  <div class="project-actions"><button class="btn btn-ghost btn-sm" type="button" data-open="dlg-portfolio">Details <i class="fa-solid fa-arrow-right"></i></button></div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Modals -->
-
-    <!-- Modal 1 -->
-    <div class="modal fade" id="projectModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">E-Commerce Website Task</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Designed responsive UI using HTML, CSS, and Bootstrap. Integrated
-                        JavaScript for product filtering, single-product views, and cart checkout using Fake Store API.
-                    </p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">Bootstrap</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">Fake Store API</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>Finding the right public API was difficult because many APIs lacked required fields like
-                            price, reviews, or product images. After researching multiple sources, I selected Fake Store
-                            API as it provided complete and consistent data.</li>
-                        <li>Implementing filtering based on category, price, and rating required creating multiple
-                            conditions and ensuring proper DOM updates.</li>
-                        <li>Building a single-product page dynamically was new, and I learned to use URL search
-                            parameters to fetch detailed product data.</li>
-                        <li>Product images were not storing correctly inside localStorage, and after debugging, I fixed
-                            this by refetching product data on cart load.</li>
-                        <li>Managing add-to-cart, delete-item, updating total price, and tax calculation needed
-                            structured logic and reusable functions.</li>
-                        <li>Ensuring the cart resets after placing an order required clearing localStorage and updating
-                            the UI state correctly.</li>
-                    </ul>
-                </div>
+      <section class="section" style="padding-top: 0" aria-label="Contact">
+        <div class="container">
+          <div class="panel contact-band" data-reveal="scale">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <p class="eyebrow">Next</p>
+            <h2 class="h-display contact-title" data-split>Have a project in <span class="serif grad-text">mind?</span></h2>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="contact.html" data-magnetic>Let's connect <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-glass" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" data-magnetic><i class="fa-brands fa-github"></i> GitHub</a>
             </div>
+          </div>
         </div>
-    </div>
+      </section>
+    </main>
 
-    <!-- Modal 2 -->
-    <div class="modal fade" id="projectModal2" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">Portfolio Website</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Built with HTML, CSS, and Bootstrap featuring smooth animations
-                        and mobile responsiveness.</p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
-                        <span class="tech-badge">Bootstrap</span>
-                        <span class="tech-badge">AOS Animation</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>Converting the React component structure into clean, semantic HTML pages while maintaining
-                            code maintainability.</li>
-                        <li>Replacing Tailwind CSS with Bootstrap 5 and custom CSS to achieve a premium, responsive
-                            design.</li>
-                        <li>Implementing AOS (Animate On Scroll) library to replicate the smooth animations originally
-                            created with Framer Motion.</li>
-                        <li>Ensuring all assets and image paths were correctly referenced after moving from a build-step
-                            environment to a static structure.</li>
-                        <li>Optimizing the site for mobile devices using Bootstrap's grid system and media queries.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ============================ DIALOGS ============================ -->
+    <dialog class="project-dialog" id="dlg-leadscope" aria-labelledby="dlg-leadscope-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/leadscope-ai-lead-intelligence.webp" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">AI · Full stack · New</p>
+          <h2 id="dlg-leadscope-title">LeadScope — AI Lead Intelligence</h2>
+          <p>
+            A lead research platform for digital marketing agencies. The agency describes its type, services and requirements; the
+            Express backend runs a two-stage Gemini pipeline — candidate discovery, then final research — and returns the single
+            strongest client opportunity with everything needed to act on it.
+          </p>
+          <h3>Features</h3>
+          <ul class="notes">
+            <li>Candidate discovery and evaluation, then selection of a #1 primary recommendation with relevant competitors.</li>
+            <li>Consistent 100-point scoring (agency/ICP fit, service fit, marketing opportunity, business potential, need, buying signals) with HOT / WARM / LOW PRIORITY / POOR FIT bands.</li>
+            <li>Six business outputs for the #1 company: lead generation strategy, AI &amp; automation workflow, lead scoring breakdown, personalized cold email, digital marketing ideas and KPI targets.</li>
+            <li>Candidate pool saved to Google Sheets through the Google Sheets API.</li>
+            <li>Dark black / white / red interface with a live API status indicator.</li>
+            <li>The backend also contains an automated discovery &amp; qualification pipeline: public-web company discovery, website verification that respects robots.txt and rate limits, deduplication, batched AI scoring computed server-side, top-10 ranking and a separate final AI evaluation, with MongoDB storage and resumable background jobs.</li>
+          </ul>
+          <h3>Technologies</h3>
+          <div class="project-tags">
+            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">Gemini API</span><span class="tag">Google Sheets API</span><span class="tag">MongoDB · Mongoose</span><span class="tag">REST API</span>
+          </div>
+          <h3>Links</h3>
+          <div class="project-actions" style="border: 0; padding: 0">
+            <a class="btn btn-primary btn-sm" href="https://ai-frotnend-digital-marketing.vercel.app" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            <a class="btn btn-glass btn-sm" href="https://github.com/JADAVEDEEEP/AI_FROTNEND_DIGITAL_MARKETING" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Frontend repo</a>
+            <a class="btn btn-glass btn-sm" href="https://github.com/JADAVEDEEEP/AI_BACKEND_DIGITAL_MARKETING" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Backend repo</a>
+          </div>
         </div>
-    </div>
+      </div>
+    </dialog>
 
-    <!-- Modal 3 -->
-    <div class="modal fade" id="projectModal3" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">Product Management CRUD System</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Built a complete CRUD system for product management using React,
-                        Node.js, Express.js, and JWT authentication. Implemented API integration, secure data handling,
-                        and interactive UI functionality.</p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express.js</span>
-                        <span class="tech-badge">React.js</span>
-                        <span class="tech-badge">JWT</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>The first challenge was that I was still learning. I had completed my basics of Node.js and
-                            Express, using the built-in methods to create a server and handle requests and responses.
-                            Since I was already familiar with the MVC structure, it was easier to understand how routes
-                            handle the request and then the controller executes the business logic. That’s how it works,
-                            and I was still learning while building this project.</li>
-                        <li>I was also somewhat familiar with JWT tokens. I read about them and implemented them to
-                            check whether a token was being generated for the correct user or not. At first, it was not
-                            generating because of a hashed password issue — I was not converting the plain text password
-                            using bcrypt again to compare it with the stored hashed password. Once I fixed that, the
-                            password matched and I was able to generate the JWT token for login.</li>
-                        <li>I faced a multer issue in the product section. The images were uploading locally, but after
-                            deployment on Render, it wasn’t working. Later, I realized it was an environment variable
-                            problem — I had forgotten to add the security key in the Render deployment environment.</li>
-                        <li>Only logged-in users can access their own products, and they are allowed to delete, update,
-                            and edit only their own products.</li>
-                    </ul>
-                </div>
-            </div>
+    <dialog class="project-dialog" id="dlg-research" aria-labelledby="dlg-research-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/ai-research-recommendation-agent.webp" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">AI agent · New</p>
+          <h2 id="dlg-research-title">AI-Powered Research &amp; Recommendation Agent</h2>
+          <p>
+            An AI research workspace: enter any company name (for example Tesla or Apple) and the agent produces a comprehensive
+            business analysis, strategic opportunities and an executive-ready pitch letter.
+          </p>
+          <h3>Features</h3>
+          <ul class="notes">
+            <li>Company search with one-click analysis.</li>
+            <li>Structured report: overview, business profile, challenges, AI opportunities, CEO pitch and sources.</li>
+            <li>Gemini reasoning with Google Search grounding for every report, so findings come with sources.</li>
+            <li>Research console and a research archive of previous reports.</li>
+            <li>Export of the finished report.</li>
+          </ul>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">Gemini API</span><span class="tag">Google Search grounding</span><span class="tag">AI agent</span></div>
+          <h3>Links</h3>
+          <div class="project-actions" style="border: 0; padding: 0">
+            <a class="btn btn-primary btn-sm" href="https://ai-powered-research-dashboard-clien.vercel.app" target="_blank" rel="noopener">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </div>
         </div>
-    </div>
+      </div>
+    </dialog>
 
-    <!-- Modal 4 -->
-    <div class="modal fade" id="projectModal4" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">Task Management System</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Built a full-stack task management application where users can
-                        securely manage their daily tasks using JWT authentication. Users can create, update, delete,
-                        and track their personal tasks with a responsive React interface.</p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">React.js</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">JWT Authentication</span>
-                        <span class="tech-badge">bcrypt</span>
-                        <span class="tech-badge">Axios</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>Implemented secure user authentication using JWT and protected routes.</li>
-                        <li>Ensured every user could access only their own tasks through backend authorization.</li>
-                        <li>Designed RESTful APIs for complete CRUD functionality.</li>
-                        <li>Managed frontend state and API communication efficiently.</li>
-                        <li>Improved user experience with validation and error handling.</li>
-                    </ul>
-                </div>
-            </div>
+    <dialog class="project-dialog" id="dlg-rag" aria-labelledby="dlg-rag-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-6.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">AI · RAG</p>
+          <h2 id="dlg-rag-title">RAG PDF Chatbot</h2>
+          <p>
+            Built a Retrieval-Augmented Generation (RAG) application that allows users to upload PDF documents and chat with their
+            content. The system extracts text from PDFs and uses Google's Gemini AI to answer questions based only on the uploaded
+            document.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">Gemini API</span><span class="tag">Multer</span><span class="tag">pdf-parse</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>Implemented PDF upload and text extraction using Multer and pdf-parse.</li>
+            <li>Engineered prompts so the AI answers only from document content.</li>
+            <li>Managed large document processing before sending context to Gemini.</li>
+            <li>Built secure APIs for uploading and querying documents.</li>
+            <li>Added fallback responses when requested information is not present in the uploaded PDF.</li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </dialog>
 
-    <!-- Modal 5 -->
-    <div class="modal fade" id="projectModal5" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">One Piece Card Game Deck Analysis (AI)</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Developed an AI-powered deck analysis platform for the One
-                        Piece Card Game. Users can build custom decks, analyze their strengths and weaknesses using
-                        AI, and receive strategic recommendations based on tournament meta and deck composition.</p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">React.js</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">OpenAI (ChatGPT API)</span>
-                        <span class="tech-badge">REST API</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>Integrated OpenAI API to generate meaningful deck analysis.</li>
-                        <li>Created structured prompts to produce consistent AI responses.</li>
-                        <li>Stored and managed deck data efficiently in MongoDB.</li>
-                        <li>Designed backend APIs for deck creation and AI analysis.</li>
-                        <li>Improved recommendations using tournament-based deck information and card synergies.</li>
-                    </ul>
-                </div>
-            </div>
+    <dialog class="project-dialog" id="dlg-onepiece" aria-labelledby="dlg-onepiece-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-8.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">AI · Full stack</p>
+          <h2 id="dlg-onepiece-title">One Piece Card Game — AI-Assisted Deck Analysis</h2>
+          <p>
+            Developed an AI-powered deck analysis platform for the One Piece Card Game. Users can build custom decks, analyze their
+            strengths and weaknesses using AI, and receive strategic recommendations based on tournament meta and deck composition.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">OpenAI (ChatGPT API)</span><span class="tag">REST API</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>Integrated OpenAI API to generate meaningful deck analysis.</li>
+            <li>Created structured prompts to produce consistent AI responses.</li>
+            <li>Stored and managed deck data efficiently in MongoDB.</li>
+            <li>Designed backend APIs for deck creation and AI analysis.</li>
+            <li>Improved recommendations using tournament-based deck information and card synergies.</li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </dialog>
 
-    <!-- Modal 6 -->
-    <div class="modal fade" id="projectModal6" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" style="color: #c084fc;">RAG PDF Chatbot (AI)</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-muted mb-4 lh-base">Built a Retrieval-Augmented Generation (RAG) application that
-                        allows users to upload PDF documents and chat with their content. The system extracts text
-                        from PDFs and uses Google's Gemini AI to answer questions based only on the uploaded document.</p>
-
-                    <h6 class="fw-semibold mb-3" style="color: #d8b4fe;">Technologies Used:</h6>
-                    <div class="d-flex flex-wrap gap-2 mb-4">
-                        <span class="tech-badge">React.js</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Express.js</span>
-                        <span class="tech-badge">MongoDB</span>
-                        <span class="tech-badge">Gemini API</span>
-                        <span class="tech-badge">Multer</span>
-                        <span class="tech-badge">pdf-parse</span>
-                    </div>
-
-                    <h6 class="fw-semibold mb-2" style="color: #d8b4fe;">Problem Solving Challenges:</h6>
-                    <ul class="text-muted small lh-base">
-                        <li>Implemented PDF upload and text extraction using Multer and pdf-parse.</li>
-                        <li>Engineered prompts so the AI answers only from document content.</li>
-                        <li>Managed large document processing before sending context to Gemini.</li>
-                        <li>Built secure APIs for uploading and querying documents.</li>
-                        <li>Added fallback responses when requested information is not present in the uploaded PDF.</li>
-                    </ul>
-                </div>
-            </div>
+    <dialog class="project-dialog" id="dlg-product" aria-labelledby="dlg-product-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-5.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">Full stack · Auth</p>
+          <h2 id="dlg-product-title">Product Management System</h2>
+          <p>
+            Built a complete CRUD system for product management using React, Node.js, Express.js, and JWT authentication.
+            Implemented API integration, secure data handling, and interactive UI functionality.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">React.js</span><span class="tag">JWT</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>
+              The first challenge was that I was still learning. I had completed my basics of Node.js and Express, using the built-in
+              methods to create a server and handle requests and responses. Since I was already familiar with the MVC structure, it
+              was easier to understand how routes handle the request and then the controller executes the business logic.
+            </li>
+            <li>
+              I implemented JWT tokens to check whether a token was being generated for the correct user. At first it was not
+              generating because of a hashed password issue — I was not comparing the plain text password with the stored bcrypt
+              hash. Once I fixed that, the password matched and I was able to generate the JWT token for login.
+            </li>
+            <li>
+              I faced a Multer issue in the product section. Images uploaded locally, but after deployment on Render it wasn't
+              working — I had forgotten to add the security key in the Render environment variables.
+            </li>
+            <li>Only logged-in users can access their own products, and they can delete, update and edit only their own products.</li>
+          </ul>
         </div>
-    </div>
+      </div>
+    </dialog>
 
-    <!-- Footer -->
-    <footer class="text-center text-muted py-4 mt-auto">
-        <p class="small mb-0">© 2025 Deep Jadav. All rights reserved.</p>
+    <dialog class="project-dialog" id="dlg-task" aria-labelledby="dlg-task-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-7.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">Full stack</p>
+          <h2 id="dlg-task-title">Task Management Application</h2>
+          <p>
+            Built a full-stack task management application where users can securely manage their daily tasks using JWT
+            authentication. Users can create, update, delete, and track their personal tasks with a responsive React interface.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">MongoDB</span><span class="tag">JWT Authentication</span><span class="tag">bcrypt</span><span class="tag">Axios</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>Implemented secure user authentication using JWT and protected routes.</li>
+            <li>Ensured every user could access only their own tasks through backend authorization.</li>
+            <li>Designed RESTful APIs for complete CRUD functionality.</li>
+            <li>Managed frontend state and API communication efficiently.</li>
+            <li>Improved user experience with validation and error handling.</li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="project-dialog" id="dlg-ecommerce" aria-labelledby="dlg-ecommerce-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-1.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">Frontend</p>
+          <h2 id="dlg-ecommerce-title">E-Commerce Website</h2>
+          <p>
+            Designed responsive UI using HTML, CSS, and Bootstrap. Integrated JavaScript for product filtering, single-product views,
+            and cart checkout using Fake Store API.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Bootstrap</span><span class="tag">JavaScript</span><span class="tag">Fake Store API</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>Finding the right public API was difficult because many APIs lacked required fields like price, reviews, or product images. After researching multiple sources, I selected Fake Store API as it provided complete and consistent data.</li>
+            <li>Implementing filtering based on category, price, and rating required creating multiple conditions and ensuring proper DOM updates.</li>
+            <li>Building a single-product page dynamically was new, and I learned to use URL search parameters to fetch detailed product data.</li>
+            <li>Product images were not storing correctly inside localStorage, and after debugging, I fixed this by refetching product data on cart load.</li>
+            <li>Managing add-to-cart, delete-item, updating total price, and tax calculation needed structured logic and reusable functions.</li>
+            <li>Ensuring the cart resets after placing an order required clearing localStorage and updating the UI state correctly.</li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="project-dialog" id="dlg-portfolio" aria-labelledby="dlg-portfolio-title">
+      <button class="dialog-close" type="button" data-close aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="dialog-scroll">
+        <div class="dialog-media"><img src="assets/projects/project-2.png" alt="" /></div>
+        <div class="dialog-body">
+          <p class="eyebrow">Frontend · 3D</p>
+          <h2 id="dlg-portfolio-title">Portfolio Website</h2>
+          <p>
+            This website. The first version was built with HTML, CSS and Bootstrap with AOS animations and mobile responsiveness.
+            The current version is a redesign: a Three.js 3D hero, a custom CSS design system and dependency-free JavaScript for
+            scroll reveals, 3D card tilt, page transitions and mouse-following lighting.
+          </p>
+          <h3>Technologies</h3>
+          <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Three.js</span></div>
+          <h3>Problem-solving challenges</h3>
+          <ul class="notes">
+            <li>Converting the React component structure into clean, semantic HTML pages while maintaining code maintainability.</li>
+            <li>Replacing Tailwind CSS with Bootstrap 5 and custom CSS to achieve a premium, responsive design.</li>
+            <li>Implementing AOS (Animate On Scroll) library to replicate the smooth animations originally created with Framer Motion.</li>
+            <li>Ensuring all assets and image paths were correctly referenced after moving from a build-step environment to a static structure.</li>
+            <li>Optimizing the site for mobile devices using Bootstrap's grid system and media queries.</li>
+            <li>In the redesign, keeping the 3D scene fast: rendering pauses when the hero is off-screen, pixel ratio is capped, and reduced-motion users get a static frame.</li>
+          </ul>
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DJ</span><span class="brand-name">Deep Jadav</span></a>
+            <p class="footer-title">Backends, APIs &amp; AI-powered products.</p>
+            <p style="margin: 0; color: var(--muted)">Software Developer · Ahmedabad, India</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Elsewhere</h4>
+            <ul>
+              <li><a href="mailto:jadavdeep560@gmail.com">Email</a></li>
+              <li><a href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://x.com" target="_blank" rel="noopener">X</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-giant" aria-hidden="true">DEEP JADAV</p>
+        <div class="footer-bottom">
+          <span>© <span data-year>2025</span> Deep Jadav. All rights reserved.</span>
+          <span class="mono">Designed &amp; built with HTML · CSS · JS · Three.js</span>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
-    </script>
-
-    <style>
-        .hover-text-blue:hover {
-            color: #3b82f6 !important;
-        }
-
-        .hover-text-white:hover {
-            color: #ffffff !important;
-        }
-
-        .hover-text-pink:hover {
-            color: #ec4899 !important;
-        }
-
-        .hover-text-gray:hover {
-            color: #d1d5db !important;
-        }
-    </style>
-</body>
-
+    <script src="assets/js/site.js" defer></script>
+  </body>
 </html>

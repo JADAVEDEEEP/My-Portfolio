@@ -1,257 +1,191 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Deep Jadav</title>
+    <meta name="description" content="Contact Deep Jadav — software developer in Ahmedabad. Email jadavdeep560@gmail.com for backend, MERN and AI development roles or projects." />
+    <meta name="theme-color" content="#0B1535" />
+    <meta property="og:title" content="Contact — Deep Jadav" />
+    <meta property="og:description" content="Let's build something intelligent. Get in touch with Deep Jadav." />
+    <link rel="icon" href="assets/kevinRushLogo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Deep Jadav</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="curtain" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --text-light: #e5e5e5;
-            --text-muted: #a3a3a3;
-            --accent-purple: #a855f7;
-            --accent-pink: #ec4899;
-            --accent-blue: #3b82f6;
-        }
+    <header class="site-header">
+      <nav class="nav-bar" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Deep Jadav — home">
+          <span class="brand-mark" aria-hidden="true">DJ</span>
+          <span><span class="brand-name">Deep Jadav</span><span class="brand-role">Software Developer</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="nav-social">
+            <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <a class="btn btn-primary btn-sm nav-cta" href="mailto:jadavdeep560@gmail.com" data-magnetic>Email me <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </header>
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-dark) !important;
-            color: var(--text-light) !important;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="menu-toggle mobile-close" type="button" data-menu-toggle aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <ul>
+        <li style="--i: 0"><a href="index.html">Home <span>01</span></a></li>
+        <li style="--i: 1"><a href="about.html">About <span>02</span></a></li>
+        <li style="--i: 2"><a href="projects.html">Projects <span>03</span></a></li>
+        <li style="--i: 3"><a href="contact.html">Contact <span>04</span></a></li>
+      </ul>
+      <div class="mobile-social">
+        <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="icon-link" href="mailto:jadavdeep560@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--text-light) !important;
-        }
-
-        .text-muted {
-            color: var(--text-muted) !important;
-        }
-
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.15), rgba(255, 255, 255, 0) 50%);
-            pointer-events: none;
-        }
-
-        /* Navbar */
-        .navbar {
-            backdrop-filter: blur(16px);
-            background: rgba(10, 10, 10, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .nav-link {
-            color: var(--text-muted) !important;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text-light) !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Contact Card */
-        .contact-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 1.5rem;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(236, 72, 153, 0.15);
-            border-color: rgba(236, 72, 153, 0.3);
-        }
-
-        .contact-link {
-            color: var(--text-light);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s;
-            padding-bottom: 2px;
-        }
-
-        .contact-link:hover {
-            color: var(--accent-pink);
-            border-color: var(--accent-pink);
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.3);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="bg-overlay"></div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md fixed-top">
+    <main id="main">
+      <section class="page-hero" aria-labelledby="page-title">
+        <div class="grid-lines" aria-hidden="true"></div>
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="assets/kevinRushLogo.png" alt="Logo" class="rounded-circle border border-secondary"
-                    style="width: 35px; height: 35px;">
-                <span class="fw-bold text-light tracking-wide fs-5">Deep Jadav</span>
-            </a>
-
-            <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars fs-4"></i>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav gap-3 gap-md-5 my-3 my-md-0">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="d-none d-md-flex gap-4 fs-5">
-                <a href="https://linkedin.com" target="_blank" class="text-muted hover-text-blue transition"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank" class="text-muted hover-text-white transition"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://instagram.com" target="_blank" class="text-muted hover-text-pink transition"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com" target="_blank" class="text-muted hover-text-gray transition"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-            </div>
+          <p class="eyebrow" data-reveal><span class="pulse" aria-hidden="true" style="margin-right: 4px"></span> Open to opportunities</p>
+          <h1 id="page-title" class="h-display page-title" data-split>Let's <span class="serif grad-text">connect.</span></h1>
+          <p class="lead" data-reveal style="--d: 300ms">
+            Hiring for a backend, MERN or AI-focused role, or have a project to build? Send a message — I'll get back to you.
+          </p>
         </div>
-    </nav>
+      </section>
 
-    <!-- Contact Section -->
-    <section class="container flex-grow-1 d-flex flex-column justify-content-center align-items-center py-5 mt-5">
-        <h1 class="text-center display-4 fw-bold mb-5 tracking-wide text-light" data-aos="fade-down">Let’s <span
-                style="color: var(--accent-pink);">Connect</span></h1>
-
-        <div class="contact-card p-5 text-center w-100" style="max-width: 550px;" data-aos="zoom-in"
-            data-aos-duration="800">
-            <div class="d-flex flex-column gap-4 text-light">
-                <div class="d-flex align-items-center justify-content-center gap-3">
-                    <i class="fa-solid fa-location-dot fs-4 text-muted"></i>
-                    <p class="mb-0 fs-5 fw-light">New Ranip, Krishna Bunglows-1, Block No-42, Ahmedabad</p>
+      <section class="section" style="padding-top: 0" aria-label="Contact details and form">
+        <div class="container contact-grid">
+          <div class="panel" data-reveal>
+            <ul class="contact-list">
+              <li>
+                <span class="ci"><i class="fa-solid fa-envelope"></i></span>
+                <div style="min-width: 0">
+                  <small>Email</small>
+                  <a href="mailto:jadavdeep560@gmail.com">jadavdeep560@gmail.com</a>
                 </div>
-
-                <div class="d-flex align-items-center justify-content-center gap-3">
-                    <i class="fa-solid fa-phone fs-4 text-muted"></i>
-                    <p class="mb-0 fs-5 fw-medium">+91 958 628 175 8</p>
+                <button class="btn btn-glass btn-sm copy-btn" type="button" data-copy="jadavdeep560@gmail.com" aria-label="Copy email address">
+                  <i class="fa-regular fa-copy"></i> <span data-label>Copy</span>
+                </button>
+              </li>
+              <li>
+                <span class="ci"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <small>Phone</small>
+                  <a href="tel:+919586281758">+91 958 628 175 8</a>
                 </div>
-
-                <div class="d-flex align-items-center justify-content-center gap-3">
-                    <i class="fa-solid fa-envelope fs-4 text-muted"></i>
-                    <a href="mailto:jadavdeep560@gmail.com" class="contact-link fs-5">jadavdeep560@gmail.com</a>
+              </li>
+              <li>
+                <span class="ci"><i class="fa-solid fa-location-dot"></i></span>
+                <div>
+                  <small>Location</small>
+                  <span class="val">New Ranip, Krishna Bunglows-1, Block No-42, Ahmedabad</span>
                 </div>
-
-                <div class="my-4 mx-auto"
-                    style="width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--text-muted), transparent);">
+              </li>
+              <li>
+                <span class="ci"><i class="fa-solid fa-share-nodes"></i></span>
+                <div>
+                  <small>Social</small>
+                  <div style="display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap">
+                    <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a class="icon-link" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a class="icon-link" href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                  </div>
                 </div>
+              </li>
+            </ul>
+          </div>
 
-                <div class="d-flex justify-content-center gap-5 fs-3">
-                    <a href="https://linkedin.com" target="_blank" class="text-muted hover-text-blue transition"
-                        data-bs-toggle="tooltip" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com" target="_blank" class="text-muted hover-text-white transition"
-                        data-bs-toggle="tooltip" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:jadavdeep560@gmail.com" class="text-muted hover-text-pink transition"
-                        data-bs-toggle="tooltip" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                </div>
+          <form class="panel form" id="contact-form" data-reveal style="--d: 100ms" novalidate>
+            <div>
+              <p class="eyebrow" style="margin-bottom: 6px">Write a message</p>
+              <p class="form-note">This opens your email app with the message ready to send.</p>
             </div>
+            <div class="form-row">
+              <div>
+                <label for="cf-name">Your name</label>
+                <input class="input" id="cf-name" name="name" type="text" autocomplete="name" required placeholder="Jane Doe" />
+              </div>
+              <div>
+                <label for="cf-email">Your email</label>
+                <input class="input" id="cf-email" name="email" type="email" autocomplete="email" required placeholder="jane@company.com" />
+              </div>
+            </div>
+            <div>
+              <label for="cf-subject">Subject</label>
+              <input class="input" id="cf-subject" name="subject" type="text" placeholder="Backend developer role / project" />
+            </div>
+            <div>
+              <label for="cf-message">Message</label>
+              <textarea class="input" id="cf-message" name="message" required placeholder="Tell me about the role or project…"></textarea>
+            </div>
+            <div class="row-between">
+              <a class="btn btn-ghost btn-sm" href="assets/Deep-Jadav-Resume.pdf" download data-resume><i class="fa-solid fa-arrow-down"></i> <span data-label>Download Resume</span></a>
+              <button class="btn btn-primary" type="submit" data-magnetic>Send message <i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+          </form>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="text-center text-muted py-4 mt-auto">
-        <p class="small mb-0">© 2025 Deep Jadav. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DJ</span><span class="brand-name">Deep Jadav</span></a>
+            <p class="footer-title">Backends, APIs &amp; AI-powered products.</p>
+            <p style="margin: 0; color: var(--muted)">Software Developer · Ahmedabad, India</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Elsewhere</h4>
+            <ul>
+              <li><a href="mailto:jadavdeep560@gmail.com">Email</a></li>
+              <li><a href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://x.com" target="_blank" rel="noopener">X</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-giant" aria-hidden="true">DEEP JADAV</p>
+        <div class="footer-bottom">
+          <span>© <span data-year>2025</span> Deep Jadav. All rights reserved.</span>
+          <span class="mono">Designed &amp; built with HTML · CSS · JS · Three.js</span>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
-
-        // Initialize Tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-    </script>
-
-    <style>
-        .hover-text-blue:hover {
-            color: #3b82f6 !important;
-        }
-
-        .hover-text-white:hover {
-            color: #ffffff !important;
-        }
-
-        .hover-text-pink:hover {
-            color: #ec4899 !important;
-        }
-
-        .hover-text-gray:hover {
-            color: #d1d5db !important;
-        }
-    </style>
-</body>
-
+    <script src="assets/js/site.js" defer></script>
+  </body>
 </html>

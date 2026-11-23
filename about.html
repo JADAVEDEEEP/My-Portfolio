@@ -1,247 +1,288 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Deep Jadav</title>
+    <meta
+      name="description"
+      content="About Deep Jadav: MCA graduate and software developer focused on backend development, MERN applications and AI-powered solutions. Skills, experience and education."
+    />
+    <meta name="theme-color" content="#0B1535" />
+    <meta property="og:title" content="About — Deep Jadav" />
+    <meta property="og:description" content="MCA graduate and software developer focused on backend, MERN and AI-powered applications." />
+    <meta property="og:image" content="assets/about.jpg" />
+    <link rel="icon" href="assets/kevinRushLogo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Deep Jadav</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="curtain" aria-hidden="true"></div>
+    <div class="cursor-light" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <style>
-        :root {
-            --bg-dark: #0a0a0a;
-            --text-light: #e5e5e5;
-            --text-muted: #a3a3a3;
-            --accent-purple: #a855f7;
-            --accent-pink: #ec4899;
-            --accent-blue: #3b82f6;
-        }
+    <header class="site-header">
+      <nav class="nav-bar" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="Deep Jadav — home">
+          <span class="brand-mark" aria-hidden="true">DJ</span>
+          <span><span class="brand-name">Deep Jadav</span><span class="brand-role">Software Developer</span></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <div class="nav-social">
+            <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          <a class="btn btn-primary btn-sm nav-cta" href="contact.html" data-magnetic>Let's connect <i class="fa-solid fa-arrow-right"></i></a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </nav>
+    </header>
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-dark) !important;
-            color: var(--text-light) !important;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="menu-toggle mobile-close" type="button" data-menu-toggle aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+      <ul>
+        <li style="--i: 0"><a href="index.html">Home <span>01</span></a></li>
+        <li style="--i: 1"><a href="about.html">About <span>02</span></a></li>
+        <li style="--i: 2"><a href="projects.html">Projects <span>03</span></a></li>
+        <li style="--i: 3"><a href="contact.html">Contact <span>04</span></a></li>
+      </ul>
+      <div class="mobile-social">
+        <a class="icon-link" href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="icon-link" href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="icon-link" href="mailto:jadavdeep560@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--text-light) !important;
-        }
-
-        .text-muted {
-            color: var(--text-muted) !important;
-        }
-
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.15), rgba(255, 255, 255, 0) 50%);
-            pointer-events: none;
-        }
-
-        /* Navbar */
-        .navbar {
-            backdrop-filter: blur(16px);
-            background: rgba(10, 10, 10, 0.7);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .nav-link {
-            color: var(--text-muted) !important;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--text-light) !important;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to right, var(--accent-purple), var(--accent-pink));
-            transition: width 0.3s;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* About Image */
-        .about-img-container {
-            border-radius: 1.5rem;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
-            overflow: hidden;
-            transition: all 0.5s;
-            position: relative;
-        }
-
-        .about-img-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
-        }
-
-        .about-img-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .about-img-container:hover::after {
-            opacity: 1;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(0, 0, 0, 0.3);
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="bg-overlay"></div>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-md fixed-top">
+    <main id="main">
+      <section class="page-hero" aria-labelledby="page-title">
+        <div class="grid-lines" aria-hidden="true"></div>
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="assets/kevinRushLogo.png" alt="Logo" class="rounded-circle border border-secondary"
-                    style="width: 35px; height: 35px;">
-                <span class="fw-bold text-light tracking-wide fs-5">Deep Jadav</span>
-            </a>
-
-            <button class="navbar-toggler border-0 text-light" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
-                <i class="fa-solid fa-bars fs-4"></i>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav gap-3 gap-md-5 my-3 my-md-0">
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="d-none d-md-flex gap-4 fs-5">
-                <a href="https://linkedin.com" target="_blank" class="text-muted hover-text-blue transition"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com" target="_blank" class="text-muted hover-text-white transition"><i
-                        class="fa-brands fa-github"></i></a>
-                <a href="https://instagram.com" target="_blank" class="text-muted hover-text-pink transition"><i
-                        class="fa-brands fa-instagram"></i></a>
-                <a href="https://x.com" target="_blank" class="text-muted hover-text-gray transition"><i
-                        class="fa-brands fa-x-twitter"></i></a>
-            </div>
+          <p class="eyebrow" data-reveal>About me</p>
+          <h1 id="page-title" class="h-display page-title" data-split>Backend <span class="serif grad-text">minded.</span><br />AI curious.</h1>
         </div>
-    </nav>
+      </section>
 
-    <!-- About Section -->
-    <section class="container flex-grow-1 d-flex flex-column justify-content-center py-5 mt-5">
-        <h1 class="text-center display-4 fw-bold mb-5 tracking-wide text-light" data-aos="fade-down">About <span
-                class="text-muted">Me</span></h1>
+      <section class="section" style="padding-top: 0" aria-label="Introduction">
+        <div class="container about-grid">
+          <div class="portrait-frame" data-reveal="scale">
+            <span class="frame-ring" aria-hidden="true"></span>
+            <span class="frame-corner tl" aria-hidden="true"></span>
+            <span class="frame-corner br" aria-hidden="true"></span>
+            <div class="frame-img" data-parallax="0.04">
+              <img src="assets/about.jpg" alt="Deep Jadav" />
+            </div>
+            <div class="portrait-badge"><span>Deep Jadav</span><span>Ahmedabad, IN</span></div>
+          </div>
+          <div class="about-copy">
+            <p class="about-statement" data-split>An MCA graduate who learns by <span class="serif grad-text">building.</span></p>
+            <p data-reveal>
+              I'm <strong>Deep Jadav</strong>, a software developer focused on <strong>backend development</strong>, modern web
+              applications and <strong>AI-powered solutions</strong>. I work across the MERN stack — MongoDB, Express.js, React.js and
+              Node.js — with most of my energy on the server side: REST API design, JWT authentication and database integration.
+            </p>
+            <p data-reveal style="--d: 80ms">
+              What started as curiosity about modern web technologies has grown into a habit of shipping complete projects: JWT-secured
+              CRUD systems, a task manager, an e-commerce storefront and, more recently, AI applications — a RAG PDF chatbot, an
+              AI-assisted deck analyser, an AI research &amp; recommendation agent and LeadScope, an AI lead intelligence platform.
+            </p>
+            <p data-reveal style="--d: 160ms">
+              I'm especially interested in <strong>AI automation</strong>: using models like Gemini to turn slow, manual research into
+              structured, source-backed results that people can act on.
+            </p>
+            <div class="hero-cta" data-reveal style="--d: 220ms">
+              <a class="btn btn-primary" href="projects.html" data-magnetic>View my work <i class="fa-solid fa-arrow-right"></i></a>
+              <a class="btn btn-glass" href="assets/Deep-Jadav-Resume.pdf" download data-resume data-magnetic><i class="fa-solid fa-arrow-down"></i> <span data-label>Download Resume</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <div class="row align-items-center g-5">
-            <!-- Image -->
-            <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">
-                <div class="about-img-container" style="width: 100%; max-width: 450px;">
-                    <img src="assets/about.jpg" alt="About Me" class="img-fluid w-100 h-100 object-fit-cover">
+      <!-- Skills -->
+      <section class="section" id="skills" aria-labelledby="skills-title" style="padding-top: 0">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow"><span class="idx">01</span> Technical skills</p>
+              <h2 id="skills-title" class="h-display h-section" data-split>Tools of the <span class="serif grad-text">trade</span></h2>
+            </div>
+            <p class="lead" data-reveal>Grouped by where they sit in the stack — all used in my projects or internships.</p>
+          </div>
+          <div class="skills-grid">
+            <article class="panel skill-group" data-reveal>
+              <div class="row-between"><span class="skill-icon"><i class="fa-solid fa-layer-group"></i></span><span class="sg-num">01</span></div>
+              <h3>Frontend</h3>
+              <p>Responsive, component-driven interfaces.</p>
+              <ul class="chips">
+                <li class="chip"><i class="fa-brands fa-react"></i>React.js</li>
+                <li class="chip"><i class="fa-brands fa-js"></i>JavaScript</li>
+                <li class="chip"><i class="fa-brands fa-html5"></i>HTML</li>
+                <li class="chip"><i class="fa-brands fa-css3-alt"></i>CSS</li>
+                <li class="chip"><i class="fa-solid fa-wind"></i>Tailwind CSS</li>
+              </ul>
+            </article>
+            <article class="panel skill-group" data-reveal style="--d: 80ms">
+              <div class="row-between"><span class="skill-icon"><i class="fa-solid fa-server"></i></span><span class="sg-num">02</span></div>
+              <h3>Backend</h3>
+              <p>APIs, auth and business logic.</p>
+              <ul class="chips">
+                <li class="chip"><i class="fa-brands fa-node-js"></i>Node.js</li>
+                <li class="chip"><i class="fa-solid fa-route"></i>Express.js</li>
+                <li class="chip"><i class="fa-solid fa-plug"></i>REST APIs</li>
+                <li class="chip"><i class="fa-solid fa-key"></i>JWT</li>
+                <li class="chip"><i class="fa-solid fa-shield-halved"></i>Authentication</li>
+              </ul>
+            </article>
+            <article class="panel skill-group" data-reveal style="--d: 160ms">
+              <div class="row-between"><span class="skill-icon"><i class="fa-solid fa-database"></i></span><span class="sg-num">03</span></div>
+              <h3>Database</h3>
+              <p>Modelling and querying data.</p>
+              <ul class="chips">
+                <li class="chip"><i class="fa-solid fa-leaf"></i>MongoDB</li>
+                <li class="chip"><i class="fa-solid fa-table"></i>MySQL</li>
+                <li class="chip"><i class="fa-solid fa-terminal"></i>SQL</li>
+              </ul>
+            </article>
+            <article class="panel skill-group" data-reveal style="--d: 240ms">
+              <div class="row-between"><span class="skill-icon"><i class="fa-solid fa-brain"></i></span><span class="sg-num">04</span></div>
+              <h3>AI &amp; Tools</h3>
+              <p>AI integration and daily workflow.</p>
+              <ul class="chips">
+                <li class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i>Gemini API</li>
+                <li class="chip"><i class="fa-solid fa-book-open"></i>RAG</li>
+                <li class="chip"><i class="fa-solid fa-robot"></i>AI Agents</li>
+                <li class="chip"><i class="fa-solid fa-diagram-project"></i>AI Automation</li>
+                <li class="chip"><i class="fa-brands fa-git-alt"></i>Git</li>
+                <li class="chip"><i class="fa-brands fa-github"></i>GitHub</li>
+                <li class="chip"><i class="fa-solid fa-paper-plane"></i>Postman</li>
+                <li class="chip"><i class="fa-solid fa-asterisk"></i>Claude</li>
+                <li class="chip"><i class="fa-solid fa-i-cursor"></i>Cursor</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section" id="experience" aria-labelledby="exp-title" style="padding-top: 0">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow"><span class="idx">02</span> Experience</p>
+              <h2 id="exp-title" class="h-display h-section" data-split>Internship <span class="serif grad-text">journey</span></h2>
+            </div>
+            <p class="lead" data-reveal>Hands-on work across .NET Core Web APIs and web development teams.</p>
+          </div>
+          <div class="timeline">
+            <article class="tl-item">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="panel tl-card" data-reveal>
+                <div class="tl-head">
+                  <h3 class="tl-role">MERN Stack Developer Intern · <span class="tl-company">Uptake Infotech</span></h3>
+                  <span class="tl-date">09/2024 — 04/2025</span>
                 </div>
-            </div>
-
-            <!-- Text -->
-            <div class="col-lg-6 text-center text-lg-start" data-aos="fade-left" data-aos-duration="1000">
-                <p class="lead text-muted fw-light lh-lg mb-4">
-                I am a dedicated MERN stack developer with a passion for building efficient and user-friendly web applications. As a
-                fresher, I have explored the full web development cycle using MongoDB, Express.js, React.js, and Node.js. What started
-                as curiosity about modern web technologies has grown into a commitment to creating smooth and high-performing digital
-                solutions.
+                <p>
+                  As a MERN Stack Developer Intern, I contributed to developing dynamic and responsive web applications using HTML, CSS,
+                  Bootstrap, and JavaScript. I also worked with a Laravel backend and phpMyAdmin for database handling.
                 </p>
-               
-                <a href="projects.html"
-                    class="btn btn-light rounded-pill px-5 py-3 fw-semibold mt-2 shadow-lg hover-scale transition">View
-                    My Work</a>
-            </div>
+                <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">Laravel</span><span class="tag">phpMyAdmin</span></div>
+              </div>
+            </article>
+            <article class="tl-item">
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="panel tl-card" data-reveal>
+                <div class="tl-head">
+                  <h3 class="tl-role">Full Stack Intern · <span class="tl-company">Six Sigma Technosoft</span></h3>
+                  <span class="tl-date">01/2024 — 04/2024</span>
+                </div>
+                <p>
+                  I developed robust .NET Core Web APIs integrated with SQL Server databases using SSMS across multiple projects,
+                  implementing RESTful endpoints for CRUD operations, authentication, and authorization with JWT tokens.
+                </p>
+                <div class="project-tags"><span class="tag">.NET Core</span><span class="tag">React.js</span><span class="tag">SQL Server · SSMS</span><span class="tag">JWT</span></div>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="text-center text-muted py-4 mt-auto">
-        <p class="small mb-0">© 2025 Deep Jadav. All rights reserved.</p>
+      <!-- Education -->
+      <section class="section" id="education" aria-labelledby="edu-title" style="padding-top: 0">
+        <div class="container">
+          <p class="eyebrow" style="margin-bottom: 22px"><span class="idx">03</span> Education</p>
+          <article class="panel edu-card" data-reveal>
+            <span class="edu-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+            <div>
+              <p class="mono" style="margin: 0; font-size: 12px; letter-spacing: 0.14em; color: var(--cyan)">POSTGRADUATE</p>
+              <h3 id="edu-title">Master of Computer Applications (MCA)</h3>
+              <p>Graduate. Alongside coursework I focused on practical project building — full-stack web apps, backend APIs and AI-powered tools.</p>
+            </div>
+            <a class="btn btn-glass btn-sm" href="projects.html">See projects <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0" aria-label="Contact">
+        <div class="container">
+          <div class="panel contact-band" data-reveal="scale">
+            <div class="grid-lines" aria-hidden="true"></div>
+            <p class="eyebrow">Say hello</p>
+            <h2 class="h-display contact-title" data-split>Let's build something <span class="serif grad-text">intelligent.</span></h2>
+            <a class="contact-mail" href="mailto:jadavdeep560@gmail.com"><i class="fa-solid fa-envelope" style="font-size: 0.7em; color: var(--cyan)"></i>jadavdeep560@gmail.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">DJ</span><span class="brand-name">Deep Jadav</span></a>
+            <p class="footer-title">Backends, APIs &amp; AI-powered products.</p>
+            <p style="margin: 0; color: var(--muted)">Software Developer · Ahmedabad, India</p>
+          </div>
+          <div class="footer-col">
+            <h4>Navigate</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Elsewhere</h4>
+            <ul>
+              <li><a href="mailto:jadavdeep560@gmail.com">Email</a></li>
+              <li><a href="https://github.com/JADAVEDEEEP" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="https://x.com" target="_blank" rel="noopener">X</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="footer-giant" aria-hidden="true">DEEP JADAV</p>
+        <div class="footer-bottom">
+          <span>© <span data-year>2025</span> Deep Jadav. All rights reserved.</span>
+          <span class="mono">Designed &amp; built with HTML · CSS · JS · Three.js</span>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true,
-            offset: 100,
-            duration: 800,
-            easing: 'ease-out-cubic',
-        });
-    </script>
-
-    <style>
-        .hover-text-blue:hover {
-            color: #3b82f6 !important;
-        }
-
-        .hover-text-white:hover {
-            color: #ffffff !important;
-        }
-
-        .hover-text-pink:hover {
-            color: #ec4899 !important;
-        }
-
-        .hover-text-gray:hover {
-            color: #d1d5db !important;
-        }
-
-        .hover-scale {
-            transition: transform 0.3s;
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-    </style>
-</body>
-
+    <script src="assets/js/site.js" defer></script>
+  </body>
 </html>
